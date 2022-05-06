@@ -12,6 +12,6 @@ describe("#sort") do
   it("will compare two sorted strings") do
     word = Word_check.new()
     word2 = Word_check.new()
-    expect(word.anagram_check('tea','eat')).to(eq("this is an antagram"))
+    expect(word.anagram_check('Schoolmaster','Theclassroom')).to(eq("this is an antagram"))
   end
 end
