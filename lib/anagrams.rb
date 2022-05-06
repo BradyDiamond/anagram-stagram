@@ -1,9 +1,9 @@
 class Word
-  def initilaize(input)
-    @input= input.to_s
+  def initilaize(str)
+    @word= word.to_s
   end
 
-  def vowel(input)
+  def sort(input)
     vowels = 0
     counter = 0
     while counter < string.length do
