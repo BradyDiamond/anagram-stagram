@@ -19,4 +19,9 @@ describe("#sort") do
     word2 = Word_check.new()
     expect(word.anagram_check('pool','fool')).to(eq("this is not an antagram"))
   end
+  it("will compare two sorted strings with different case characters and say if they are an antagram") do
+    word = Word_check.new()
+    word2 = Word_check.new()
+    expect(word.anagram_check('pOOl','lOop')).to(eq("this is an antagram"))
+  end
 end
