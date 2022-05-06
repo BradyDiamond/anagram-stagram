@@ -1,13 +1,15 @@
 class Word_check
   def initilaize(word, word2)
-    @word = word.gsub!(/[^0-9A-Za-z]/, '')
-    @word2 = word2.gsub!(/[^0-9A-Za-z]/, '')
+    @word = word.gsub!(/[^0-9A-Za-z ]/, '')
+    @word2 = word2.gsub!(/[^0-9A-Za-z ]/, '')
   end
 
   def vowel_check(word, word2)
     vowel_check = word.downcase.count 'aeiou'
     vowel_check2 = word2.downcase.count 'aeiou'
-    if  vowel_check < 1 || vowel_check2 < 1
+    space_check = word.downcase.count ' '
+    space_check2 = word2.downcase.count ' '
+    if  vowel_check < 1 || vowel_check2 < 1 || space_check >= vowel_check || space_check2 >= vowel_check2
       return "one or both of these are not vaild words"
     end
       return "You have entered two valid words"
