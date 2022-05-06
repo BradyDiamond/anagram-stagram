@@ -12,7 +12,7 @@ class Word_check
     if  vowel_check < 1 || vowel_check2 < 1 || space_check >= vowel_check || space_check2 >= vowel_check2
       return "one or both of these are not vaild words"
     end
-      return "You have entered two valid words"
+      return "You have entered valid words"
   end
 
   def anagram_check(word, word2)
