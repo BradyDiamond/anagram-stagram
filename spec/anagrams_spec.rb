@@ -29,4 +29,5 @@ describe("anagrams") do
     word2 = Word_check.new()
     expect(word.anagram_check('pOOl@','lO@op')).to(eq("this is an antagram"))
   end
+  
 end
