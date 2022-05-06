@@ -1,7 +1,7 @@
 class Word_check
   def initilaize(str)
     @word = word.gsub!(/[^0-9A-Za-z]/, '')
-    @word2 = word2
+    @word2 = word2.gsub!(/[^0-9A-Za-z]/, '')
 
   end
 
@@ -33,7 +33,7 @@ class Word_check
     big_string = anti_check + anti2_check
     string_count = big_string.chars.uniq.count { |char| big_string.count(char) > 1}
     if string_count < 1
-      return "this is an antigram"
+      return "no letters match: this is an antigram"
     end
   end
 end
