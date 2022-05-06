@@ -1,13 +1,8 @@
 class Word_check
-  def initilaize(str)
+  def initilaize(word, word2)
     @word = word.gsub!(/[^0-9A-Za-z]/, '')
     @word2 = word2.gsub!(/[^0-9A-Za-z]/, '')
 
-  end
-
-  def sort_word(word)
-    return word.split('').sort().join('').to_s
-    return word2.split('').sort().join('').to_s
   end
 
   def vowel_check(word,word2)
@@ -18,7 +13,7 @@ class Word_check
     end
   end
 
-  def anagram_check(word, word2)
+  def anagram_check(word,word2)
     word_check = word.downcase.split('').sort().join('').to_s
     word2_check = word2.downcase.split('').sort().join('').to_s
     if word_check == word2_check

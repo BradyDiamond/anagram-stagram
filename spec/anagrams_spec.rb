@@ -3,12 +3,6 @@ require('rspec')
 require('anagrams')
 
 describe("anagrams") do
-  it("will sort string to isolate characters") do
-    word = Word_check.new()
-    word2 = Word_check.new()
-    expect(word.sort_word('hello')).to(eq('ehllo'))
-    expect(word2.sort_word('there')).to(eq('eehrt'))
-  end
   it("will compare two sorted strings and say if they are an anagram") do
     word = Word_check.new()
     word2 = Word_check.new()
