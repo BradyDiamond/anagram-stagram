@@ -37,6 +37,6 @@ describe("anagrams") do
   it("will compare two sorted strings with different case characters, remove symbols, and say if they are an anigram") do
     word = Word_check.new()
     word2 = Word_check.new()
-    expect(word.vowel_check('pile','tags')).to(eq("this is an antigram"))
+    expect(word.antigram_check('pile','tags')).to(eq("this is an antigram"))
   end
 end

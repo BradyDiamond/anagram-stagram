@@ -2,7 +2,7 @@ class Word_check
   def initilaize(str)
     @word = word.gsub!(/[^0-9A-Za-z]/, '')
     @word2 = word2
-    @vowels = {'a' => /[a]/,'e' => /[e]/, 'i' => /[i]/,'o' => /[o]/,'u' => /[u]/}
+
   end
 
   def sort_word(word)
@@ -24,6 +24,16 @@ class Word_check
     if word_check == word2_check
       return  "this is an anagram"
     end
-    return "this is not an anagram"
-  end    
+      return "this is not an anagram"
+  end
+  
+  def antigram_check(word,word2)
+    anti_check = word.downcase.split('').sort().join('').to_s
+    anti2_check = word2.downcase.split('').sort().join('').to_s
+    big_string = anti_check + anti2_check
+    string_count = big_string.chars.uniq.count { |char| big_string.count(char) > 1}
+    if string_count < 1
+      return "this is an antigram"
+    end
+  end
 end
