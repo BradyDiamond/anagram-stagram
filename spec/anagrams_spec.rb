@@ -2,7 +2,7 @@ require('pry')
 require('rspec')
 require('anagrams')
 
-describe("#sort") do
+describe("anagrams") do
   it("will sort string to isolate characters") do
     word = Word_check.new()
     word2 = Word_check.new()
