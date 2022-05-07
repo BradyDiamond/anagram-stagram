@@ -25,8 +25,8 @@ class Word_check
   end
   
   def antigram_check(word, word2)
-    anti_check = word.downcase.split('').sort().join('').to_s
-    anti2_check = word2.downcase.split('').sort().join('').to_s
+    anti_check = word.gsub(/[ ]/i, '').downcase.split('').sort().join('').to_s
+    anti2_check = word2.gsub(/[ ]/i, '').downcase.split('').sort().join('').to_s
     big_string = anti_check + anti2_check
     string_count = big_string.chars.uniq.count { |char| big_string.count(char) > 1}
     if string_count < 1
