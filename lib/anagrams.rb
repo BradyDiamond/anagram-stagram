@@ -1,23 +1,21 @@
 class Word_check
   def initilaize(word, word2)
-    @word = word.gsub!(/[^0-9A-Za-z ]/, '')
-    @word2 = word2.gsub!(/[^0-9A-Za-z ]/, '')
+    @word = word.gsub!(/[^0-9A-Za-z]/, '')
+    @word2 = word2.gsub!(/[^0-9A-Za-z]/, '')
   end
 
   def vowel_check(word, word2)
     vowel_check = word.downcase.count 'aeiou'
     vowel_check2 = word2.downcase.count 'aeiou'
-    space_check = word.downcase.count ' '
-    space_check2 = word2.downcase.count ' '
-    if  vowel_check < 1 || vowel_check2 < 1 || space_check >= vowel_check || space_check2 >= vowel_check2
+    if  vowel_check < 1 
       return "one or both of these are not vaild words"
     end
       return "You have entered valid words"
   end
 
   def anagram_check(word, word2)
-    word_check = word.downcase.split('').sort().join('').to_s
-    word2_check = word2.downcase.split('').sort().join('').to_s
+    word_check = word.gsub(/\s+/, "").downcase.split('').sort().join('').to_s
+    word2_check = word2.gsub(/\s+/, "").downcase.split('').sort().join('').to_s
     if word_check == word2_check
       return  "this is an anagram"
     end
@@ -25,8 +23,8 @@ class Word_check
   end
   
   def antigram_check(word, word2)
-    anti_check = word.gsub(/[ ]/i, '').downcase.split('').sort().join('').to_s
-    anti2_check = word2.gsub(/[ ]/i, '').downcase.split('').sort().join('').to_s
+    anti_check = word.gsub(/\s+/, "").downcase.split('').sort().join('').to_s
+    anti2_check = word2.gsub(/\s+/, "").downcase.split('').sort().join('').to_s
     big_string = anti_check + anti2_check
     string_count = big_string.chars.uniq.count { |char| big_string.count(char) > 1}
     if string_count < 1
