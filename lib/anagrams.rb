@@ -1,4 +1,4 @@
-class Word_check
+class WordCheck
   def initilaize(word, word2)
     @word = word
     @word2 = word2
@@ -7,7 +7,9 @@ class Word_check
   def vowel_check(word, word2)
     vowel_check = word.downcase.count 'aeiou'
     vowel_check2 = word2.downcase.count 'aeiou'
-    if  vowel_check < 1 
+    space_check = word.downcase.count ' '
+    space_check2 = word2.downcase.count ' '
+    if  vowel_check < 1 || vowel_check2 < 1 || space_check >= vowel_check || space_check2 >= vowel_check2
       return "one or both of these are not vaild words"
     end
       return "You have entered valid words"
@@ -30,7 +32,6 @@ class Word_check
     anti_check2 = word2.gsub!(/[^0-9A-Za-z]/, '')
     anti2_check = word2.gsub(/\s+/, "").downcase.split('').sort().join('').delete(' ').to_s
     big_string = anti_check + anti2_check
-    puts big_string
     string_count = big_string.chars.uniq.count { |char| big_string.count(char) > 1}
     if string_count < 1
       return "no letters match: this is an antigram"

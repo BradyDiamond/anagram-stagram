@@ -7,6 +7,7 @@
 ## Technologies Used
 
 * _RUBY_
+* _rspec_
 
 ## Description
 
@@ -15,8 +16,9 @@
 ## Setup/Installation Requirements
 
 * _clone github repository_
-* _install correct version of Ruby_
-* _install bundler and run it in the projects directory from the console_
+* _install correct version of Ruby (2.6.10)_
+* _install bundler and run it in the projects directory from the console using command "bundle"_
+* _run "rspec in the console to run tests_
 * _in the console type ruby anagrams_scripts.rb_
 * _enter your words and prepare for a fun overload_
 

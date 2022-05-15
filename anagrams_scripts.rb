@@ -11,7 +11,7 @@ puts "enter another word"
 
 word2 = gets.chomp
 
-check = Word_check.new()
+check = WordCheck.new()
 
 p check.vowel_check(word,word2)
 puts "+++++++++++++++++++++++++++++"
