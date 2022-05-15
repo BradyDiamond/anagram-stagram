@@ -29,5 +29,6 @@ describe("anagrams") do
   end
   it("will see if two inputed words are words") do
     word = Word_check.new()
-    expect(word.antigram_check('pile','tags')).to(eq("no letters match: this is an antigram"))
+    expect(word.vowel_check('pile of','these tags')).to(eq("You have entered valid words"))
+    expect(word.vowel_check('ppppp of','these tags')).to(eq("one or both of these are not vaild words"))
 end
