@@ -21,7 +21,7 @@ describe("anagrams") do
   end
   it("will dispay error message if no vowels are present") do
     word = WordCheck.new()
-    expect(word.vowel_check('pOOl@','lprp')).to(eq("one or both of these are not vaild words"))
+    expect(word.vowel_check('lprp','pOOl@')).to(eq("these are not vaild words"))
   end
   it("will compare two sorted strings with different case characters, remove symbols, and say if they are an anigram") do
     word = WordCheck.new()
@@ -30,6 +30,6 @@ describe("anagrams") do
   it("will see if two inputed words are words") do
     word = WordCheck.new()
     expect(word.vowel_check('pile of','these tags')).to(eq("You have entered valid words"))
-    expect(word.vowel_check('ppppp of','these tags')).to(eq("one or both of these are not vaild words"))
+    expect(word.vowel_check('ppppp of','these tags')).to(eq("these are not vaild words"))
   end
 end

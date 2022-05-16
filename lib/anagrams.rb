@@ -4,16 +4,24 @@ class WordCheck
     @word2 = word2
   end
 
-  def vowel_check(word, word2)
-    vowel_check = word.downcase.count 'aeiou'
-    vowel_check2 = word2.downcase.count 'aeiou'
-    space_check = word.downcase.count ' '
-    space_check2 = word2.downcase.count ' '
-    if  vowel_check < 1 || vowel_check2 < 1 || space_check >= vowel_check || space_check2 >= vowel_check2
-      return "one or both of these are not vaild words"
-    end
+  def vowel_check(word, word2)   
+    word = word.split().map{|w|w.count'aeouiAEIOU'}
+    word2 = word2.split().map{|w|w.count'aeouiAEIOU'}
+    word.each do |char|
+    if (char <= 0) 
+      return "these are not vaild words"
+    else
       return "You have entered valid words"
+    end
   end
+    word2.each do |char|
+    if (char <= 0) 
+      return "these are not vaild words"
+    else
+      return "You have entered valid words"
+    end
+  end
+end
 
   def anagram_check(word, word2)
     word_check = word.gsub!(/[^0-9A-Za-z]/, '')
